@@ -6,7 +6,7 @@ import UpdateEmployee from './components/UpdateEmployee';
 import DeleteEmployee from './components/DeleteEmployee'; 
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('#'); // State to track current page
+  const [currentPage, setCurrentPage] = useState('create'); // State to track current page
 
   const renderPage = () => {
     switch (currentPage) {
