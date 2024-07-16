@@ -14,7 +14,8 @@ const FetchAllEmployees = () => {
   const fetchEmployees = async () => {
     try {
       const response = await axios.get('http://localhost:9000/employeeDetails');
-      setEmployees(response.data);
+      const sortedEmployees = response.data.sort((a, b) => a.empId - b.empId); 
+      setEmployees(sortedEmployees);
       setShowTable(true); // Show table after fetching employees successfully
     } catch (error) {
       console.error('Failed to fetch employees:', error.response.data);
