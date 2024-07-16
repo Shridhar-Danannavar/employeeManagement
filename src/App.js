@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import CreateEmployee from './components/CreateEmployee'; 
-import FetchAllEmployees from './components/FetchAllEmployees'; 
-import FetchEmployeeById from './components/FetchEmployeeById';
-import UpdateEmployee from './components/UpdateEmployee';
-import DeleteEmployee from './components/DeleteEmployee'; 
+import CreateEmployee from './components/CreateEmployee'; // Replace with your actual component imports
+import FetchAllEmployees from './components/FetchAllEmployees'; // Replace with your actual component imports
+import FetchEmployeeById from './components/FetchEmployeeById'; // Replace with your actual component imports
+import UpdateEmployee from './components/UpdateEmployee'; // Replace with your actual component imports
+import DeleteEmployee from './components/DeleteEmployee'; // Replace with your actual component imports
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('create'); // State to track current page
+  const [currentPage, setCurrentPage] = useState('#'); // State to track current page
 
   const renderPage = () => {
     switch (currentPage) {
@@ -27,13 +27,68 @@ const App = () => {
 
   return (
     <div>
-      <nav>
-        <ul>
-          <li><button onClick={() => setCurrentPage('create')}>Create Employee</button></li>
-          <li><button onClick={() => setCurrentPage('fetch-all')}>Fetch All Employees</button></li>
-          <li><button onClick={() => setCurrentPage('fetch-by-id')}>Fetch Employee by ID</button></li>
-          <li><button onClick={() => setCurrentPage('update')}>Update Employee</button></li>
-          <li><button onClick={() => setCurrentPage('delete')}>Delete Employee</button></li>
+      <nav style={styles.nav}>
+        <ul style={styles.navList}>
+          <li style={styles.navItem}>
+            <button
+              onClick={() => setCurrentPage('create')}
+              style={{
+                ...styles.navButton,
+                backgroundColor: currentPage === 'create' ? '#007BFF' : 'transparent',
+                color: currentPage === 'create' ? '#FFF' : '#000',
+              }}
+            >
+              Create Employee
+            </button>
+          </li>
+          <li style={styles.navItem}>
+            <button
+              onClick={() => setCurrentPage('fetch-all')}
+              style={{
+                ...styles.navButton,
+                backgroundColor: currentPage === 'fetch-all' ? '#007BFF' : 'transparent',
+                color: currentPage === 'fetch-all' ? '#FFF' : '#000',
+              }}
+            >
+              Fetch All Employees
+            </button>
+          </li>
+          <li style={styles.navItem}>
+            <button
+              onClick={() => setCurrentPage('fetch-by-id')}
+              style={{
+                ...styles.navButton,
+                backgroundColor: currentPage === 'fetch-by-id' ? '#007BFF' : 'transparent',
+                color: currentPage === 'fetch-by-id' ? '#FFF' : '#000',
+              }}
+            >
+              Fetch Employee by ID
+            </button>
+          </li>
+          <li style={styles.navItem}>
+            <button
+              onClick={() => setCurrentPage('update')}
+              style={{
+                ...styles.navButton,
+                backgroundColor: currentPage === 'update' ? '#007BFF' : 'transparent',
+                color: currentPage === 'update' ? '#FFF' : '#000',
+              }}
+            >
+              Update Employee
+            </button>
+          </li>
+          <li style={styles.navItem}>
+            <button
+              onClick={() => setCurrentPage('delete')}
+              style={{
+                ...styles.navButton,
+                backgroundColor: currentPage === 'delete' ? '#007BFF' : 'transparent',
+                color: currentPage === 'delete' ? '#FFF' : '#000',
+              }}
+            >
+              Delete Employee
+            </button>
+          </li>
         </ul>
       </nav>
       <div className="content">
@@ -41,6 +96,28 @@ const App = () => {
       </div>
     </div>
   );
+};
+
+const styles = {
+  nav: {
+    marginBottom: '20px',
+  },
+  navList: {
+    listStyleType: 'none',
+    padding: 0,
+    display: 'flex',
+    justifyContent: "space-around",
+  },
+  navItem: {
+    margin: '0 5px',
+  },
+  navButton: {
+    padding: '10px 20px',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '16px',
+    transition: 'background-color 0.3s',
+  },
 };
 
 export default App;
