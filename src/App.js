@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import CreateEmployee from './components/CreateEmployee'; // Replace with your actual component imports
-import FetchAllEmployees from './components/FetchAllEmployees'; // Replace with your actual component imports
-import FetchEmployeeById from './components/FetchEmployeeById'; // Replace with your actual component imports
-import UpdateEmployee from './components/UpdateEmployee'; // Replace with your actual component imports
-import DeleteEmployee from './components/DeleteEmployee'; // Replace with your actual component imports
+import CreateEmployee from './components/CreateEmployee'; 
+import FetchAllEmployees from './components/FetchAllEmployees'; 
+import FetchEmployeeById from './components/FetchEmployeeById';
+import UpdateEmployee from './components/UpdateEmployee';
+import DeleteEmployee from './components/DeleteEmployee'; 
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('#'); // State to track current page
