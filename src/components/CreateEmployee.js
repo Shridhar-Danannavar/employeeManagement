@@ -22,20 +22,19 @@ const CreateEmployee = () => {
     empSalary: Yup.number().required('Employee Salary is required').positive(),
   });
 
-  const onSubmit = async (values, { resetForm }) => {
-    try {
-      const response = await axios.get(`http://localhost:9000/employeeDetails/${values.empId}`);
-      if (response.data) {
-        alert(`Employee ID ${values.empId} is already taken. Please choose another ID.`);
-      } else {
-        await axios.post('http://localhost:9000/employeeDetails', values);
+const onSubmit = async (values, { resetForm }) => {
+
+      axios.post('http://localhost:9000/employeeDetails', values)
+      .then(response => {
         alert('Employee created successfully');
         resetForm();
-      }
-    } catch (error) {
-      console.error('Error creating employee:', error);
-    }
-  };
+      })
+      .catch(error => {
+        console.error('Error creating employee:', error);
+      });
+  
+};
+  
 
   const formik = useFormik({
     initialValues,
