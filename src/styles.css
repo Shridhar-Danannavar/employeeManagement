@@ -62,7 +62,7 @@ button{
   }
   
   ul {
-    background-color: #19334f;
+    background-color: #81baf3;
     list-style-type: none;
     display: flex;
     text-align: center;
@@ -112,3 +112,7 @@ button{
   justify-content: center;
  }
   
+ .emp{
+  padding: 0.5rem;
+  margin: 1rem;
+ }
