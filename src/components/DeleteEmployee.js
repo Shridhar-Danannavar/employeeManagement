@@ -22,7 +22,7 @@ const DeleteEmployee = () => {
   return (
     <div>
       <h2>Delete Employee</h2>
-      <input
+      <input className="emp"
         type="number"
         value={empId}
         onChange={e => setEmpId(e.target.value)}
