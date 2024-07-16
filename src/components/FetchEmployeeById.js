@@ -39,7 +39,7 @@ const FetchEmployeeById = () => {
       <h2>Fetch Employee by ID</h2>
       <label>
         Employee ID:
-        <input type="text" value={empId} onChange={(e) => setEmpId(e.target.value)} />
+        <input className="emp" type="text" value={empId} onChange={(e) => setEmpId(e.target.value)} />
       </label>
       <button onClick={handleFetchById}>Fetch Employee</button>
       <button onClick={handleHideDetails} style={{ marginLeft: '10px' }}>
